@@ -1,0 +1,68 @@
+# This file defines all dimensions and parameters
+# values for your problem :
+
+# Initial and final time :
+time.free string none
+time.initial double 0
+time.final double 30
+
+# Dimensions :
+state.dimension integer 4
+control.dimension integer 1
+algebraic.dimension integer 0
+parameter.dimension integer 0
+constant.dimension integer 11
+boundarycond.dimension integer 4
+constraint.dimension integer 0
+
+# Discretization :
+discretization.steps integer 100
+discretization.method string midpoint
+
+# Optimization :
+optimization.type string single
+batch.type integer 0
+batch.index integer 0
+batch.nrange integer 1
+batch.lowerbound double 0
+batch.upperbound double 0
+batch.directory string none
+
+# Initialization :
+initialization.type string from_init_file
+initialization.file string none
+
+# Parameter identification :
+paramid.type string false
+paramid.separator string ,
+paramid.file string no_directory
+paramid.dimension integer 0
+
+# Names :
+state.0 string ss
+state.1 string sr
+state.2 string rr
+state.3 string cit
+control.0 string u
+boundarycond.0 string boundarycond.0
+boundarycond.1 string boundarycond.1
+boundarycond.2 string boundarycond.2
+boundarycond.3 string boundarycond.3
+constant.0 string beta
+constant.1 string muM
+constant.2 string DM
+constant.3 string psi1
+constant.4 string psi2
+constant.5 string psi3
+constant.6 string MT
+constant.7 string alp1
+constant.8 string PT
+constant.9 string alpr
+constant.10 string gamma
+
+# Solution file :
+solution.file string threegeno.SOL
+
+# Iteration output frequency :
+iteration.output.frequency integer 0
+
