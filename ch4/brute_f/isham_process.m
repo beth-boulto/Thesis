@@ -276,9 +276,7 @@ costr3=0.05*trapz(cost2);
 %% create cost vector and plot as bar chart for comparisons between
 %treatment interval lengths and optimal vs sequential
 figure;
-cost_v=[costt3-costu3,costu3;costr3,costus3;nan,nan; ...
-    ... costt2-costu2,costu2;costr2,costus2;nan,nan; ...
-    ...costt1-costu1,costu1;costr1,costus1];
+cost_v=[costt3-costu3,costu3;costr3,costus3;nan,nan; costt2-costu2,costu2;costr2,costus2;nan,nan; costt1-costu1,costu1;costr1,costus1];
 bar(cost_v,'stacked');
 hold on;
 ax = gca;
