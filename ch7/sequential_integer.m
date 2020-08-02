@@ -49,11 +49,9 @@ for ii=1:m-1
     u=1;
     [~,x2]=ode45(dx_m,tu,init);
     % calcualte costs of each treatment
-    cost1 = alp1*(x1(:,1)+x1(:,2)-MT).^2...
-    ...+alpr*(x1(:,2)./(x1(:,1)+x1(:,2))-pT).^2;
+    cost1 = alp1*(x1(:,1)+x1(:,2)-MT).^2+alpr*(x1(:,2)./(x1(:,1)+x1(:,2))-pT).^2;
     cost1=0.01*trapz(cost1);
-      cost2 = alp1*(x2(:,1)+x2(:,2)-MT).^2...
-      ...+alpr*(x2(:,2)./(x2(:,1)+x2(:,2))-pT).^2;
+      cost2 = alp1*(x2(:,1)+x2(:,2)-MT).^2+alpr*(x2(:,2)./(x2(:,1)+x2(:,2))-pT).^2;
     cost2=0.01*trapz(cost2)+t_int;
     
     % VAriance VERSION - comment out as appropriate
@@ -66,11 +64,9 @@ for ii=1:m-1
 %     u=1;
 %     [~,x2]=ode45(dx_m,tu,init);
 %     % calcualte costs of each treatment
-%     cost1 = alp1*(x1(:,1)+x1(:,2)-MT).^2...
-%...+alpr*(x1(:,2)./(x1(:,1)+x1(:,2))-pT).^2+ alp2*(x1(:,3)+x1(:,4)-VT).^2;
+%     cost1 = alp1*(x1(:,1)+x1(:,2)-MT).^2+alpr*(x1(:,2)./(x1(:,1)+x1(:,2))-pT).^2+ alp2*(x1(:,3)+x1(:,4)-VT).^2;
 %     cost1=0.01*trapz(cost1);
-%       cost2 = alp1*(x2(:,1)+x2(:,2)-MT).^2...
-%...+alpr*(x2(:,2)./(x2(:,1)+x2(:,2))-pT).^2+ alp2*(x2(:,3)+x2(:,4)-VT).^2;
+%       cost2 = alp1*(x2(:,1)+x2(:,2)-MT).^2+alpr*(x2(:,2)./(x2(:,1)+x2(:,2))-pT).^2+ alp2*(x2(:,3)+x2(:,4)-VT).^2;
 %     cost2=0.01*trapz(cost2)+t_int;
     
     ts=horzcat(ts,tu);
@@ -136,11 +132,9 @@ for ii=1:m-1
     u=1;
     [~,x2]=ode45(dx_m,tu,init);
     
-    cost1 = alp1*(x1(:,1)+x1(:,2)-MT).^2 ...
-    ...+alpr*(x1(:,2)./(x1(:,1)+x1(:,2))-pT).^2;
+    cost1 = alp1*(x1(:,1)+x1(:,2)-MT).^2 +alpr*(x1(:,2)./(x1(:,1)+x1(:,2))-pT).^2;
     cost1=0.01*trapz(cost1);
-      cost2 = alp1*(x2(:,1)+x2(:,2)-MT).^2 ...
-      ...+alpr*(x2(:,2)./(x2(:,1)+x2(:,2))-pT).^2;
+      cost2 = alp1*(x2(:,1)+x2(:,2)-MT).^2 +alpr*(x2(:,2)./(x2(:,1)+x2(:,2))-pT).^2;
     cost2=0.01*trapz(cost2)+t_int;
      % VAriance VERSION - comment out as appropriate
     % run subinterval without treat
@@ -152,11 +146,9 @@ for ii=1:m-1
 %     u=1;
 %     [~,x2]=ode45(dx_m,tu,init);
 %     % calcualte costs of each treatment
-%     cost1 = alp1*(x1(:,1)+x1(:,2)-MT).^2...
-%...+alpr*(x1(:,2)./(x1(:,1)+x1(:,2))-pT).^2+ alp2*(x1(:,3)+x1(:,4)-VT).^2;
+%     cost1 = alp1*(x1(:,1)+x1(:,2)-MT).^2+alpr*(x1(:,2)./(x1(:,1)+x1(:,2))-pT).^2+ alp2*(x1(:,3)+x1(:,4)-VT).^2;
 %     cost1=0.01*trapz(cost1);
-%       cost2 = alp1*(x2(:,1)+x2(:,2)-MT).^2...
-%...+alpr*(x2(:,2)./(x2(:,1)+x2(:,2))-pT).^2+ alp2*(x2(:,3)+x2(:,4)-VT).^2;
+%       cost2 = alp1*(x2(:,1)+x2(:,2)-MT).^2+alpr*(x2(:,2)./(x2(:,1)+x2(:,2))-pT).^2+ alp2*(x2(:,3)+x2(:,4)-VT).^2;
 %     cost2=0.01*trapz(cost2)+t_int;
 
     ts=horzcat(ts,tu);
@@ -219,11 +211,9 @@ for ii=1:m-1
     u=1;
     [~,x2]=ode45(dx_m,tu,init);
     
-    cost1 = alp1*(x1(:,1)+x1(:,2)-MT).^2 ...
-        ...+alpr*(x1(:,2)./(x1(:,1)+x1(:,2))-pT).^2;
+    cost1 = alp1*(x1(:,1)+x1(:,2)-MT).^2 +alpr*(x1(:,2)./(x1(:,1)+x1(:,2))-pT).^2;
     cost1=0.01*trapz(cost1);
-      cost2 = alp1*(x2(:,1)+x2(:,2)-MT).^2 ...
-          ...+alpr*(x2(:,2)./(x2(:,1)+x2(:,2))-pT).^2;
+      cost2 = alp1*(x2(:,1)+x2(:,2)-MT).^2 +alpr*(x2(:,2)./(x2(:,1)+x2(:,2))-pT).^2;
     cost2=0.01*trapz(cost2)+t_int;
      % VAriance VERSION - comment out as appropriate
     % run subinterval without treat
@@ -235,11 +225,9 @@ for ii=1:m-1
 %     u=1;
 %     [~,x2]=ode45(dx_m,tu,init);
 %     % calcualte costs of each treatment
-%     cost1 = alp1*(x1(:,1)+x1(:,2)-MT).^2 ...
-% ...+alpr*(x1(:,2)./(x1(:,1)+x1(:,2))-pT).^2+ alp2*(x1(:,3)+x1(:,4)-VT).^2;
+%     cost1 = alp1*(x1(:,1)+x1(:,2)-MT).^2 +alpr*(x1(:,2)./(x1(:,1)+x1(:,2))-pT).^2+ alp2*(x1(:,3)+x1(:,4)-VT).^2;
 %     cost1=0.01*trapz(cost1);
-%       cost2 = alp1*(x2(:,1)+x2(:,2)-MT).^2 ...
-% ...+alpr*(x2(:,2)./(x2(:,1)+x2(:,2))-pT).^2+ alp2*(x2(:,3)+x2(:,4)-VT).^2;
+%       cost2 = alp1*(x2(:,1)+x2(:,2)-MT).^2 +alpr*(x2(:,2)./(x2(:,1)+x2(:,2))-pT).^2+ alp2*(x2(:,3)+x2(:,4)-VT).^2;
 %     cost2=0.01*trapz(cost2)+t_int;
 
     ts=horzcat(ts,tu);
@@ -281,8 +269,7 @@ xlabel('time')
 ylabel('M_R')
 set(findall(gcf,'-property','FontSize'),'FontSize',15)
 % set up cost vector 
-cost_v = [cost025-0.25*sum025,sum025*0.25;nan,nan;...
-    ...cost05-0.5*sum05,sum05*0.5;nan,nan;cost10-1*sum10,sum10*1];
+cost_v = [cost025-0.25*sum025,sum025*0.25;nan,nan;cost05-0.5*sum05,sum05*0.5;nan,nan;cost10-1*sum10,sum10*1];
 % plot cost comparison
 figure;
 
