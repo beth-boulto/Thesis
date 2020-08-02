@@ -220,8 +220,7 @@ phi=psi;
 % find pgf values for h(1), h'(1), h''(1) using h_neg_bin function
 h1 = h_neg_bin(1);
 %set up moment closure system 
- dx = @(t,x) [phi * (h1(2))  - alpha* x(2) - mu_M*x(1); ...
-     ...phi*(h1(3)+ h1(2))+ mu_M*x(1)-2*mu_M*x(2)];
+ dx = @(t,x) [phi * (h1(2))  - alpha* x(2) - mu_M*x(1);phi*(h1(3)+ h1(2))+ mu_M*x(1)-2*mu_M*x(2)];
  % solve over time vector
  [~,x1]=ode45(dx,t1,[0;0]);
  
@@ -248,8 +247,7 @@ h1 = h_neg_bin(1);
  % add in treatement
  mu_M=mu_M1+u;
  % simulate ode model for most infected
-dx = @(t,x) [phi * (h1(2))  - alpha* x(2) - mu_M*x(1);...
-    ...phi*(h1(3)+ h1(2))+ mu_M*x(1)-2*mu_M*x(2)];
+dx = @(t,x) [phi * (h1(2))  - alpha* x(2) - mu_M*x(1);phi*(h1(3)+ h1(2))+ mu_M*x(1)-2*mu_M*x(2)];
   [~,x3]=ode45(dx,t2,[M2;V2]);
   % calxculate combined mean and variance
   MT=prop*x2(:,1)+(1-prop)*x3(:,1);
@@ -259,8 +257,7 @@ dx = @(t,x) [phi * (h1(2))  - alpha* x(2) - mu_M*x(1);...
   x2=[MT,VT];
   mu_M=mu_M1;
   % simulate untretaed again
-  dx = @(t,x) [phi * (h1(2))  - alpha* x(2) - mu_M*x(1);...
-  ...phi*(h1(3)+ h1(2))+ mu_M*x(1)-2*mu_M*x(2)];
+  dx = @(t,x) [phi * (h1(2))  - alpha* x(2) - mu_M*x(1);phi*(h1(3)+ h1(2))+ mu_M*x(1)-2*mu_M*x(2)];
  % solve over time vector
  t3=1:0.5/5000:1.5;
  [~,x3]=ode45(dx,t3,[MT(end);VT(end)]);
