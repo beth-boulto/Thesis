@@ -10,7 +10,6 @@ global beta mu_M D_M psi1 u1 tu
 % interpolate control - for cntinuous control remove previous
 u=interp1(tu,u1,t,'previous');
 
-   dx=[(beta-mu_M-u)*x(1)-D_M*(x(1).^2+(1-psi1)*x(1)*x(2));...
-       ...(beta-mu_M)*x(2)-D_M*(x(2).^2+(psi1)*x(1)*x(2))];
+   dx=[(beta-mu_M-u)*x(1)-D_M*(x(1).^2+(1-psi1)*x(1)*x(2));(beta-mu_M)*x(2)-D_M*(x(2).^2+(psi1)*x(1)*x(2))];
 
 end
